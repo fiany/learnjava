@@ -52,16 +52,15 @@ public class SortMethod {
     // =======================快速排序
 
     public static int partition(List<Integer> list, int left, int right) {
-        int pivot = left;
-        int index = pivot + 1;
+        int index = left + 1;
         for (int i = index; i <= right; i++) {
-            if (list.get(i) < list.get(pivot)) {
+            if (list.get(i) < list.get(left)) {
                 swap(list, i, index);
                 index++;
             }
 
         }
-        swap(list, pivot, index - 1);
+        swap(list, left, index - 1);
         return index - 1;
     }
 
